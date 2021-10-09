@@ -150,7 +150,7 @@ app.controller('ctrl', ['$scope', '$q', function ($scope, $q) {
                             ]
                     }]
             }
-
+            $scope.process = true;
             var rctcomp = document.getElementById('rctbtn'); rctcomp.click();
         });
 
