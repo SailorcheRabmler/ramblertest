@@ -83,66 +83,66 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 
 
-var app = angular.module('app', []);
+//var app = angular.module('app', []);
 
 
-app.directive("tree", function ($compile) {
-    return {
-        restrict: "AE",
-        scope: { comment: '=' },
-        template:
-            '<p title="id = {{comment.id}}">{{ comment.text }}<br /></p>' +
-            '<ul>' +
-            '<li ng-repeat="child in comment.children">' +
-            '<tree comment="child"></tree>' +
-            '</li>' +
-            '</ul>',
-        link: function (scope, element, attrs) {
-            var aa = attrs;
-            //debugger;
-            var strElm3 = '<br /><a href="javascript:void(0)" ng-click="DelComment(comment)">Удалить</a>';
-            var strElm = '<br /><a href="javascript:void(0)" ng-click="AddComment(comment)">Ответить</a>';
-            scope.AddComment = function (com) {
-                //debugger;
-                com.children.push({ id: 666, text: com.input, children: [] });
-                //alert(com);
+//app.directive("tree", function ($compile) {
+//    return {
+//        restrict: "AE",
+//        scope: { comment: '=' },
+//        template:
+//            '<p title="id = {{comment.id}}">{{ comment.text }}<br /></p>' +
+//            '<ul>' +
+//            '<li ng-repeat="child in comment.children">' +
+//            '<tree comment="child"></tree>' +
+//            '</li>' +
+//            '</ul>',
+//        link: function (scope, element, attrs) {
+//            var aa = attrs;
+//            //debugger;
+//            var strElm3 = '<br /><a href="javascript:void(0)" ng-click="DelComment(comment)">Удалить</a>';
+//            var strElm = '<br /><a href="javascript:void(0)" ng-click="AddComment(comment)">Ответить</a>';
+//            scope.AddComment = function (com) {
+//                //debugger;
+//                com.children.push({ id: 666, text: com.input, children: [] });
+//                //alert(com);
 
-                var rctcomp = document.getElementById('rctbtn'); rctcomp.click()
-            };
-            scope.DelComment = function (com) {
-                //debugger;
+//                var rctcomp = document.getElementById('rctbtn'); rctcomp.click()
+//            };
+//            scope.DelComment = function (com) {
+//                //debugger;
 
-                var index = scope.$parent.$parent.comment.children.indexOf(com);
-                scope.$parent.$parent.comment.children.splice(index, 1)
+//                var index = scope.$parent.$parent.comment.children.indexOf(com);
+//                scope.$parent.$parent.comment.children.splice(index, 1)
 
-                var rctcomp = document.getElementById('rctbtn'); rctcomp.click()
+//                var rctcomp = document.getElementById('rctbtn'); rctcomp.click()
 
-            };
+//            };
 
 
-            //$compile(scope);
+//            //$compile(scope);
 
-            var strElm2 = '<br /><input type="text" ng-model="comment.input" />';
-            var compiledHtml = $compile(strElm)(scope);
-            var compiledHtml2 = $compile(strElm2)(scope);
-            if (scope.comment.id != 1) {
-                var compiledHtml3 = $compile(strElm3)(scope);
-                element.find("p").append(compiledHtml3);
-            }
-            //element.append(compiledHtml);
-            //debugger;
+//            var strElm2 = '<br /><input type="text" ng-model="comment.input" />';
+//            var compiledHtml = $compile(strElm)(scope);
+//            var compiledHtml2 = $compile(strElm2)(scope);
+//            if (scope.comment.id != 1) {
+//                var compiledHtml3 = $compile(strElm3)(scope);
+//                element.find("p").append(compiledHtml3);
+//            }
+//            //element.append(compiledHtml);
+//            //debugger;
 
-            element.find("p").append(compiledHtml2);
-            element.find("p").append(compiledHtml);
+//            element.find("p").append(compiledHtml2);
+//            element.find("p").append(compiledHtml);
 
-            //element.parent().css("style", "{{child.invisible?'display: none':''}}");
-            //element.parent().attr("style", "{{child.invisible?'display: none':''}}");
-            //return RecursionHelper.compile(scope, function (scope, iElement, iAttrs, controller, transcludeFn) {
+//            //element.parent().css("style", "{{child.invisible?'display: none':''}}");
+//            //element.parent().attr("style", "{{child.invisible?'display: none':''}}");
+//            //return RecursionHelper.compile(scope, function (scope, iElement, iAttrs, controller, transcludeFn) {
 
-            //});
-        }
-    };
-});
+//            //});
+//        }
+//    };
+//});
 
 //app.controller('ctrl', ['$scope', '$q', function ($scope, $q) {
 
