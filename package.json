@@ -1,0 +1,31 @@
+{
+  "name": "node",
+  "version": "0.0.0",
+  "description": "node",
+  "main": "server.ts",
+  "author": {
+    "name": ""
+  },
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "build": "webpack-cli ./app.tsx --config webpack-config.js",
+    "compile": "webpack-cli ./app.tsx --config webpack-config.js",
+    "start": "node ."
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14",
+    "typescript": "^3.9.10"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "express": "^4.17.1",
+    "kill-port": "^1.6.1",
+    "path": "^0.12.7",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-encoding-plugin": "^0.3.1"
+  }
+}
