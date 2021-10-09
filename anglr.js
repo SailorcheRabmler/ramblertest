@@ -40,10 +40,15 @@ app.directive("tree", function ($compile) {
             var strElm2 = '<br /><input type="text" ng-model="comment.input" />';
             var compiledHtml = $compile(strElm)(scope);
             var compiledHtml2 = $compile(strElm2)(scope);
-            if (scope.comment.id != 1) {
-                var compiledHtml3 = $compile(strElm3)(scope);
-                element.find("p").append(compiledHtml3);
+            debugger;
+            try {
+                if (attrs.id != "post") {
+                    var compiledHtml3 = $compile(strElm3)(scope);
+                    element.find("p").append(compiledHtml3);
+                }
             }
+            catch (ex) { debugger;}
+            
             //element.append(compiledHtml);
             //debugger;
 
